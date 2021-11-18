@@ -1,0 +1,356 @@
+@font-face {
+  font-family: Roboto Bold;
+  font-weight: 700;
+  src: url(../fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Roboto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Roboto Bold;
+}
+
+.homepage {
+  background-color: #E8E5D8;
+  height: 100%;
+}
+
+.btn-dark {
+  padding: 12px 36px;
+  background: #060200;
+  color: #E8E5D8;
+  font-weight: 600;
+  border-radius: 25px;
+  border: 2px solid #060200;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-dark:hover {
+  background-color: #E8E5D8;
+  color: #060200;
+  border: 2px solid #060200;
+}
+
+.btn-dark:hover .arrow-path {
+  fill: #060200;
+}
+
+.arrow {
+  width: 14px;
+  height: 14px;
+  padding-left: 10px;
+}
+
+.arrow-path {
+  fill: #E8E5D8;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #E8E5D8;
+  padding: 16px 0;
+  margin: 0 auto;
+  top: 0;
+  z-index: 3;
+  transition: all 0.4s;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.navbar .navbar-logo, 
+.navbar li a {
+  text-decoration: none;
+  color: #060200;
+  font-weight: 600;
+}
+
+.navbar li a {
+  display: block;
+  padding: 24px 20px;
+  text-transform: uppercase;
+  transition: all .2s ease-in-out;
+}
+
+.navbar li a:hover {
+  color: #FE5B12;
+}
+
+.navbar .navbar-logo {
+  display: block;
+  float: left;
+  font-size: 22px;
+  padding: 24px 0;
+}
+
+.navbar .navbar-list {
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.navbar .navbar-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 35px 0 20px;
+  position: relative;
+  user-select: none;
+}
+
+.navbar .navbar-icon .navicon {
+  background: #060200;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.navbar .navbar-icon .navicon:before,
+.navbar .navbar-icon .navicon:after {
+  background: #060200;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.navbar .navbar-icon .navicon:before {
+  top: 5px;
+}
+
+.navbar .navbar-icon .navicon:after {
+  top: -5px;
+}
+
+.navbar .navbar-btn {
+  display: none;
+}
+
+.navbar .navbar-btn:checked ~ .navbar-list {
+  max-height: 240px;
+}
+
+.navbar .navbar-btn:checked ~ .navbar-icon .navicon {
+  background: transparent;
+}
+
+.navbar .navbar-btn:checked ~ .navbar-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.navbar .navbar-btn:checked ~ .navbar-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.navbar .navbar-btn:checked ~ .navbar-icon:not(.steps) .navicon:before,
+.navbar .navbar-btn:checked ~ .navbar-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+.navbar-open {
+  background-color: #060200;
+  border-radius: 10px;
+  width: 355px;
+  margin: 10px;
+}
+
+.navbar-open li a {
+  color:  #E8E5D8;
+}
+
+.navbar-logo-hide {
+  display: none !important;
+}
+
+.navicon-light:before,
+.navicon-light:after {
+  background: #E8E5D8 !important;;
+}
+
+.homepage-content {
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.homepage-content-header {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.homepage-content-title {
+  margin: 40px auto;
+  width: 80%;
+  font-size: 57px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.homepage-content-gallery {
+  padding-top: 45px;
+  display: grid;
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.homepage-content-gallery .image img {
+  width: 100%;
+}
+
+/*.homepage-content-gallery .img-hover-zoom {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.homepage-content-gallery .img-hover-zoom img {
+  transition: transform .5s ease;
+}
+
+.homepage-content-gallery .image-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(66, 64, 64, 0.50);
+  transition: all .3s ease-out;
+  z-index: 2;
+  opacity: 0;
+}
+
+.homepage-content-gallery .image-text {
+  font-size: 20px;
+  color: #E8E5D8;
+}
+
+.homepage-content-gallery .img-hover-zoom:hover img {
+  transform: scale(1.5);
+}
+
+.homepage-content-gallery .img-hover-zoom:hover .image-overlay {
+  opacity: 1;
+}*/ 
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  .homepage-content {
+    text-align: center;
+  }
+
+  .homepage-content-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .homepage-content-gallery .image:nth-child(1) {
+    grid-area: 1/1/4/3;
+  }
+
+  .homepage-content-gallery .image:nth-child(2) {
+    grid-area: 4/1/7/1;
+  }
+
+  .homepage-content-gallery .image:nth-child(3) {
+    grid-area: 4/2/7/3;
+  }
+
+  .homepage-content-gallery .image:nth-child(4) {
+    grid-area: 1/3/7/4;
+  }
+
+  .homepage-content-gallery .image-desktop {
+    display: block;
+  }
+
+  .homepage-content-gallery .image-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .homepage-content-gallery .image-desktop {
+    display: none;
+  }
+
+  .homepage-content-gallery .image-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    height: 62px;
+  }
+
+  .navbar li {
+    float: left;
+  }
+
+  .navbar .navbar-list {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .navbar .navbar-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar .navbar-logo {
+    padding-left: 0;
+  }
+
+  .navbar li a {
+    padding: 12px 0;
+  }
+
+  .homepage-content-header {
+    text-align: left;
+  }
+
+  .homepage-content-title {
+    margin: 0 0 50px;
+    font-size: 40px;
+  }
+
+  .homepage-content-gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
