@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid #060200;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .btn-dark:hover {
