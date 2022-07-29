@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Instagram Package</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="907aa85d-54ea-441a-8438-63d43a64bd34" class="page sans"><header><h1 class="page-title">Instagram Package</h1></header><div class="page-body"><h3 id="ad4a554a-911d-4181-b01b-783810fc1275" class=""><strong>Lifestyle product photography to elevate your brand and increase revenue </strong></h3><p id="8a0b519b-0dab-4eb0-8a0c-e72997fa73c3" class=""> </p><h2 id="210f311e-3f8c-4c07-915a-316b82ab3e1a" class="">The Problem </h2><p id="ee54d688-6945-4a8b-b903-bd615324c2c4" class="">Lifestyle product photography is hard. You have to find a photographer you trust. Then you need a stylist and art director. For the actual photos you need a studio and props. And then you have to retouch the photos…</p><p id="7b75ab3f-b680-4fa6-93fa-f92829133223" class="">
+</p><p id="ccd8ef23-c1a6-44e5-abbc-51fd25b619d4" class=""> It all eats up valuable time and money. </p><p id="ed2ffa66-d1b9-4c79-a6c3-088208a0fb2d" class="">
+</p><p id="48f9c868-6630-4ece-94ae-3bcb8d9aece5" class="">But great photography is essential to a cosmetics business. So what to do? You could teach yourself but as a business owner you have no desire to learn professional photography. </p><p id="c80d8377-6935-4ddb-9000-a78a9f2f7dd8" class="">
+</p><p id="b969512c-a319-44fc-afb4-4544d56963cd" class="">
+</p><p id="e5169add-c3bb-4760-b285-a50e32ce621d" class="">
+</p><figure id="ffb2fd0c-dc17-4310-a9d3-56f3e86d4483" class="image"><a href="Drops_and_Beauty_Serum_on_beige.jpg"><img style="width:432px" src="Drops_and_Beauty_Serum_on_beige.jpg"/></a><figcaption>Product image by Sugarcoated</figcaption></figure><p id="0b4066d5-9026-4a5f-b47d-6d3ef1133217" class="">
+</p><p id="4cc771ea-1f1f-4283-baaa-189773dff95d" class="">
+</p><h2 id="4a71abad-52aa-4e3f-a1be-29a10f782690" class=""><strong>What if it was easy?</strong></h2><p id="efefe7a0-6ce7-4cd7-94c2-17cfbf057b2b" class="">What if getting beautiful lifestyle images of your beauty products was easy? And fast? What if the process looked something like this:</p><p id="91590a67-0e02-447e-bec4-213b54430fd7" class="">
+</p><h3 id="02099264-9049-4307-9a2c-8c478a25e786" class="">Preview</h3><p id="2de68624-f056-4a8a-bb28-5405dabcaaf5" class="">You could preview images <em>before</em> you buy. This would eliminate many unknowns from the process. </p><h3 id="8293c649-7668-4daf-bde3-c441ba77183c" class="">Fast</h3><p id="b6f20b29-180e-40d3-a6af-fb8258710c46" class="">Final images would be ready in days, not weeks. No more waiting for endlessly for retouching to wrap up. </p><p id="9eef2274-7dc5-442b-bfac-bfca7fc65fe7" class="">
+</p><h3 id="748b6cb0-4d28-45ca-ac4b-d4119df48bcf" class="">Easy</h3><p id="426eecd9-2471-40ce-ad3d-9bcd2f4e2155" class="">No more days spent at a photoshoot hovering over the photographer. Just send your product samples to the studio and be done with it. </p><p id="4d4c0833-9124-4ca6-973b-8c15c295f081" class="">
+</p><h3 id="03e383ab-7162-4e0b-8236-a8bb0e6af111" class="">High Quality</h3><p id="f7f666a2-f443-4b9e-97a9-c534b4407c8a" class="">You may not be as big as Fenti or ColourPop (yet). But you <em>can</em> get beautiful photos that rival them. </p><p id="c2619d4a-3d81-4d03-b186-36baf989ef7c" class="">
+</p><p id="3c8e85e1-081d-4636-91f3-72ca6cc61944" class="">
+</p><p id="cd35c2b2-bd89-4c25-a416-516243e96bb6" class="">
+</p><p id="9c379525-045b-4d82-b22d-3caa3f69d2b7" class="block-color-orange">
+</p><figure id="db7d4270-5a97-4144-8dbe-5b3cead47153" class="image"><a href="saint_jane.jpg"><img style="width:432px" src="saint_jane.jpg"/></a><figcaption>Product image by Sugarcoated</figcaption></figure><p id="eed252b1-bc68-4f8f-9669-d3cbaf286e05" class="">
+</p><p id="9aa0c0ec-a39f-432f-9555-9529b126c4a8" class="">
+</p><h2 id="1a4e96c1-2053-4944-8f4e-55d9b68b0973" class=""><strong>There’s a Better Way</strong></h2><p id="1d051022-2c6f-434c-9019-25924e018ecb" class="">We are experts in creating beautiful images that resonate with your customers. Our images create an emotional connection to your product. </p><p id="e4f89626-f00d-4d37-8854-095241c23231" class="">We utilize a unique process that combines photography, modeling, and digital design to make beautiful imagery for your website and social. </p><p id="342e8fb9-3322-4377-bb05-6d538f8c4063" class="">
+</p><p id="d3d83de5-d149-4f3a-a5eb-6a3ceb23f185" class="">Through the use of premium locations, models and props; we create images that pull at the heart of shoppers and create an emotional connection to your product.</p><h2 id="58202b54-3b2f-4e78-beda-d0e1b2650145" class=""><strong>Who is this NOT for?</strong></h2><p id="252955ec-70c2-4527-85a4-f92d76f79704" class="">Some brands like Guerlain or Givenchy have an in-house photography style. They require completely bespoke photo styling that is unique to their brand. Their photos are 100% unique.</p><p id="bdf63ee1-2c6a-416f-ae79-61909e068e2e" class="">
+</p><p id="3b846074-e522-4940-b107-cf352d8fce65" class="">This package is not for them.</p><p id="04c84f4b-17c7-4dcd-bbbf-a1fd6ddcd322" class="">
+</p><p id="c2d21ddb-78f3-4323-8850-6d232f245579" class="">Our Instagram package reuses props, surfaces, and models across multiple clients. The images you will get will look fantastic but they are not totally bespoke. For clients who require completely custom images, we recommend our <a href="https://wearesugarcoated.com/custom"><span style="border-bottom:0.05em solid">custom package.</span></a></p><h2 id="efe2854f-6acb-4cc7-9696-c0f12ba486ab" class=""><strong>The Package</strong></h2><p id="9beb323f-f384-4b93-b0da-e3b222879700" class=""> These are the scenes in Instagram bundle #1. It includes:</p><p id="935e34f0-3a99-47e5-bad1-7c31d275f7ed" class="">
+</p><p id="98d7c0f7-b0d5-4d3e-86b0-7bdad1b854fc" class=""><strong>• 4 Lifestyle images </strong></p><p id="5d0ea168-2e06-4db4-b748-2546544ba2f9" class=""><strong>• 6 Product images</strong></p><p id="e1dcf255-a212-4332-af8f-f471aa4cdf57" class=""><strong>• 7 Flatlay images </strong></p><p id="70472ea3-b23c-42e9-aaf2-8968dcb344ac" class=""><strong>• High resolution images for web, social, and print</strong></p><p id="f5a1adca-683c-4071-b765-0db17badb3e5" class="">
+</p><p id="08d77bd8-206a-4773-9129-c33629ddbc81" class="">Your products will displayed in the scenes below (the black and white bottles below are placeholder). You just tell us which products should go in which scenes. Note: We often rotate colors backgrounds so some colors may differ from what you see below.</p><p id="987575a2-7e2d-4fd6-8621-7485d954d4e1" class="">
+</p><h3 id="71058a09-e548-4b31-8b89-50c136b80b7e" class="">Lifestyle Images:</h3><figure id="c8b3a6f5-f82d-4047-a987-ed9e93b7c751" class="image"><a href="4.jpg"><img style="width:1400px" src="4.jpg"/></a></figure><figure id="af0b3525-6402-4222-9750-7b0811c328ee" class="image"><a href="2.jpg"><img style="width:1400px" src="2.jpg"/></a></figure><figure id="23d04a14-7539-47a6-b87d-3e511a276a18" class="image"><a href="8.jpg"><img style="width:1400px" src="8.jpg"/></a></figure><figure id="04993b81-a5ac-46b0-b4d3-68d8cccbe2d4" class="image"><a href="14.jpg"><img style="width:1400px" src="14.jpg"/></a></figure><figure id="7ac3ecbe-ab7b-4cfe-9058-ba9a6394ab17" class="image"><a href="15.jpg"><img style="width:1400px" src="15.jpg"/></a></figure><p id="c4a889a3-4d9b-4431-8a77-4b8ce7ee71dc" class="">
+</p><p id="db9efa7f-35e9-4e80-a2a3-88a3260b686d" class="">
+</p><h3 id="7ccf324b-e273-4f14-81c5-2a47a97292dd" class="">Product Images:</h3><figure id="9ce932dc-695f-4332-ab65-120d4377d2c5" class="image"><a href="13.jpg"><img style="width:1400px" src="13.jpg"/></a></figure><figure id="d61b3941-ed29-4c12-9445-39bf3779198a" class="image"><a href="11.jpg"><img style="width:1400px" src="11.jpg"/></a></figure><figure id="64f9a6c9-e8ca-4670-8991-661c25d1a7d4" class="image"><a href="1.jpg"><img style="width:1400px" src="1.jpg"/></a></figure><figure id="9ec0703e-e57b-4eed-8dea-76eec6070569" class="image"><a href="10.jpg"><img style="width:1400px" src="10.jpg"/></a></figure><figure id="6d333322-e716-479e-a629-731593ae3533" class="image"><a href="12.jpg"><img style="width:1400px" src="12.jpg"/></a></figure><p id="7e75732a-d33f-4916-abeb-82ad24a3e647" class="">
+</p><h3 id="bad2eca9-8c94-404f-8c3f-e9750d13965a" class="">Flat Lay Images:</h3><figure id="b22d4827-630b-405b-9a90-a8deb11ee73d" class="image"><a href="5.jpg"><img style="width:1400px" src="5.jpg"/></a></figure><figure id="7588bc50-0946-4280-8999-638fa393d023" class="image"><a href="6.jpg"><img style="width:1400px" src="6.jpg"/></a></figure><figure id="ff30d568-c1b2-4a47-a6fd-8a31773085e3" class="image"><a href="9.jpg"><img style="width:1400px" src="9.jpg"/></a></figure><figure id="279a8f7e-56fa-4997-bf03-24ce20b11efe" class="image"><a href="7.jpg"><img style="width:1400px" src="7.jpg"/></a></figure><figure id="4c7a9026-f592-4286-90ca-b3c07b4eb074" class="image"><a href="16.jpg"><img style="width:1400px" src="16.jpg"/></a></figure><figure id="1eff811d-f1a1-470e-bf00-0183f11c7fe1" class="image"><a href="18.jpg"><img style="width:1400px" src="18.jpg"/></a></figure><figure id="fde63d93-00f1-4219-9d87-62708f0e1066" class="image"><a href="17.jpg"><img style="width:1400px" src="17.jpg"/></a></figure><p id="988184cf-67ec-4643-af37-71a96cc508f9" class="">
+</p></div></article></body></html>
