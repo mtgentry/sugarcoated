@@ -1,5 +1,3 @@
-// nuxt.config.js
-
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -11,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: process.env.IS_AGENCY === '1' ? 'Sugarcoated' : '',
+    titleTemplate: process.env.IS_AGENCY === '1' ? 'Sugarcoated' : 'Sugarcoated',
     htmlAttrs: {
       lang: 'en'
     },
@@ -29,8 +27,6 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/variables.css', // CSS Variables
-    '~/assets/main.css'       // Global Styles
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -41,7 +37,6 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
   env: {
     IS_AGENCY: process.env.IS_AGENCY === '1'
   },

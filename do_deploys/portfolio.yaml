@@ -2,7 +2,7 @@ alerts:
 - rule: DEPLOYMENT_FAILED
 - rule: DOMAIN_FAILED
 domains:
-- domain: masongentry.com
+- domain: sugarcoated.com
   type: PRIMARY
 envs:
 - key: BASE_URL
@@ -26,7 +26,7 @@ services:
   github:
     branch: master
     deploy_on_push: true
-    repo: mtgentry/portfolio
+    repo: mtgentry/sugarcoated
   http_port: 8080
   instance_count: 1
   instance_size_slug: basic-xxs
