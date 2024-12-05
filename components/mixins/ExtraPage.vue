@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-row#extra(justify="center" align="center" v-if="project" :class="{agency: isAgency}")
+  v-row#extra(justify="center" align="center" v-if="project" class="agency")
     v-col(cols="12")
       Section(v-for="(section, i) in project.layout" slim_padding
         :section="section" :key="i" :style="{color: textColor}")
@@ -33,16 +33,15 @@ export default {
     try {
       const pageName = this.page_name || this.$route.name;
       console.log('Fetching data for page:', pageName);
-      const response = await this.$axios.get(`/pages/${pageName}/layout.json`);
-      console.log('Fetched data:', response.data);  // Add this to see what data is being loaded
+      // Using window.location.origin to get the current host and port
+      const baseUrl = process.client ? window.location.origin : process.env.BASE_URL;
+      const response = await this.$axios.get(`${baseUrl}/domains/agency/pages/${pageName}/layout.json`);
+      console.log('Fetched data:', response.data);
       this.project = response.data;
     } catch (e) {
       console.error('Error fetching data:', e);
-    }
-  },
-  mounted() {
-    if (!process.env.IS_AGENCY) {
-      return this.$nuxt.error({ statusCode: 404, message: 'Page not found' });
+      console.error('Current BASE_URL:', process.env.BASE_URL);
+      console.error('Full requested URL:', `${process.env.BASE_URL}/domains/agency/pages/${this.page_name}/layout.json`);
     }
   },
   head() {
@@ -57,9 +56,6 @@ export default {
     };
   },
   computed: {
-    isAgency() {
-      return process.env.IS_AGENCY;
-    },
     ...mapState(['textColor'])
   }
 }

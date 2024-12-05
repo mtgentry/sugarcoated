@@ -1,23 +1,18 @@
 <script>
 import ExtraPage from "@/components/mixins/ExtraPage.vue";
-import Carousel from "@/components/carousel.vue";
-
 
 export default {
-  extends: process.env.IS_AGENCY ? ExtraPage : Homepage,
+  extends: ExtraPage,
   data() {
     return {
-      page_name: process.env.IS_AGENCY ? 'unlimited_design' : 'home', // Adjust the 'home' value as necessary for the portfolio variation
+      page_name: 'unlimited_design',
     };
   },
 };
 </script>
 
-
-<style lang="sass" >
+<style lang="sass">
 .agency
-
-
   h1
     margin-bottom: -50px    // Reduced from default
     padding-bottom: 0      // Remove any padding
@@ -30,12 +25,9 @@ export default {
     font-weight: 100 !important
     opacity: 0.8
     
-    
   p
     margin: 0!important
     
-   
-
   #button
     margin-bottom: 138px!important
   #video

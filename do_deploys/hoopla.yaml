@@ -8,9 +8,6 @@ envs:
 - key: NODE_ENV
   scope: RUN_AND_BUILD_TIME
   value: production
-- key: IS_AGENCY
-  scope: RUN_AND_BUILD_TIME
-  value: "1"
 ingress:
   rules:
   - component:
@@ -26,7 +23,7 @@ services:
   github:
     branch: master
     deploy_on_push: true
-    repo: mtgentry/portfolio
+    repo: mtgentry/sugarcoated
   http_port: 8080
   instance_count: 1
   instance_size_slug: basic-xxs

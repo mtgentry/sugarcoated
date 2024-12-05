@@ -9,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: process.env.IS_AGENCY === '1' ? 'Sugarcoated' : 'Sugarcoated',
+    titleTemplate: 'Sugarcoated',
     htmlAttrs: {
       lang: 'en'
     },
@@ -37,9 +37,6 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  env: {
-    IS_AGENCY: process.env.IS_AGENCY === '1'
-  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -53,14 +50,13 @@ export default {
     // ...other modules you might already have
   ],
 
-  // Server Middleware: Add this block to register your middleware
-  // serverMiddleware: [
-  //  '~/middleware/pdfProxy',  // Add this line
-  // ],
-
-  axios: {
-    baseURL: `${process.env.BASE_URL}/domains/${process.env.IS_AGENCY === '1' ? 'agency' : 'portfolio'}`
-  },
+axios: {
+  baseURL: process.env.BASE_URL,
+  port: 3000,
+  proxy: false,
+  retry: { retries: 3 },
+  debug: true
+},
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
