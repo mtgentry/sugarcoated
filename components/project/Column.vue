@@ -34,7 +34,6 @@ export default {
   margin: 0 auto
   
 
-  .col 
 
   
   .v-col

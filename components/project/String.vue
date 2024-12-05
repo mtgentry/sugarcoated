@@ -37,7 +37,7 @@ export default {
 <style lang="sass" scoped>
 
 
-h1
+
 
 h2
   font-size: 35px
