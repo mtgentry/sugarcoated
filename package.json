@@ -5,9 +5,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "nuxt",
-    "build": "yarn build",
-    "start": "yarn start",
-    "generate": "yarn generate"
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxt/types": "~2.17.0",
