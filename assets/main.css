@@ -1,0 +1,208 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&family=Lora:wght@400;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font Weight Utilities */
+.font-thin { font-weight: 100; }
+.font-extralight { font-weight: 200; }
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.font-black { font-weight: 900; }
+
+/* Additional Font Families */
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-merriweather { font-family: 'Merriweather', serif; }
+.font-lora { font-family: 'Lora', serif; }
+
+/* Global Styles */
+body {
+  font-family: 'Lora', sans-serif;
+  color: #ffffff;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100 !important;
+  font-size: 50px !important;
+  line-height: 120%;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.v-application h2,
+.v-application h2.font-weight-bold,
+h2.font-weight-bold,
+h2 {
+  font-family: 'Lora', sans-serif;
+  font-weight: 300 !important;
+  font-size: 23px !important;
+  line-height: 140% !important;
+  color: #fff !important;
+  opacity: 0.8;
+  text-align: center;
+}
+
+p {
+  font-family: 'Lora', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+/* Text Box Components */
+.textBoxTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.textBoxText {
+  font-family: 'Lora', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+  color: #fff;
+}
+
+/* Button Styles */
+.button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quote-container {
+  width: 70%;
+  max-width: 1200px;
+  min-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+
+}
+
+
+.first-line {
+  display: block;
+
+  line-height: 1.2;
+
+
+}
+
+.quote-text {
+  font-family: 'Lora', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 1.2;
+  font-style: italic;
+  white-space: pre-line;
+  margin-bottom: 20px;
+  color: #fff;
+  width: 100%;
+  text-align: center;  /* Added this */
+  display: block;      /* Changed from flex to block */
+
+}
+
+.quote-text::first-line {
+
+  line-height: -5;
+color: #fff;
+border: 1px solid #ccc;
+  /* any other specific styling for first line */
+
+}
+
+
+.quote-text:before {
+  content: "\201C";
+  font-size: 280px; 
+  margin-right: 80px;
+  position: relative;
+  top: 120px; 
+  font-family: 'Lora';
+  line-height: 1;
+  color: #fff;
+
+}
+
+
+
+  /* 
+.quote-text:after {
+  font-size: 45px;
+  margin-left: 10px;
+  position: relative;
+  border: 1px solid pink;
+}
+
+ */
+
+.quote-author {
+  font-family: 'Lora', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  padding-top: 60px;
+
+}
+
+.quote-author:before {
+  content: '\2014';
+  margin-right: 10px;
+
+}
+
+
+.quote-container {
+ width: 90%;
+ min-width: unset;
+ top: -130px; 
+ position: relative;
+ padding: 20px 10px;
+   /* border: 1px solid purple; */
+ margin-bottom:-90px;
+}
+  
+.quote-text {
+font-size: 40px;
+/* border: 1px solid yellow;  */
+}
+  
+.quote-author {
+font-size: 17px;
+top: -10px; 
+ position: relative;
+/* border: 1px solid orange;  */
+  }

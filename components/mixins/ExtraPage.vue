@@ -1,0 +1,79 @@
+<template lang="pug">
+  v-row#extra(justify="center" align="center" v-if="project" :class="{agency: isAgency}")
+    v-col(cols="12")
+      Section(v-for="(section, i) in project.layout" slim_padding
+        :section="section" :key="i" :style="{color: textColor}")
+    Footer
+</template>
+
+<script>
+import Section from "@/components/project/Section.vue";
+import Footer from "@/components/Footer.vue";
+import {mapState} from "vuex";
+import MailchimpForm from "@/components/MailchimpForm.vue";
+
+export default {
+  components: {
+    Section,
+    Footer,
+    MailchimpForm
+  },
+  fetchOnServer: false,
+  transition: 'fade',
+  data() {
+    return {
+      project: {
+        layout: [],
+        seo_description: ''
+      },
+      page_name: null
+    }
+  },
+  async created() {
+    try {
+      const pageName = this.page_name || this.$route.name;
+      console.log('Fetching data for page:', pageName);
+      const response = await this.$axios.get(`/pages/${pageName}/layout.json`);
+      console.log('Fetched data:', response.data);  // Add this to see what data is being loaded
+      this.project = response.data;
+    } catch (e) {
+      console.error('Error fetching data:', e);
+    }
+  },
+  mounted() {
+    if (!process.env.IS_AGENCY) {
+      return this.$nuxt.error({ statusCode: 404, message: 'Page not found' });
+    }
+  },
+  head() {
+    return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.project?.seo_description || ''
+        }
+      ]
+    };
+  },
+  computed: {
+    isAgency() {
+      return process.env.IS_AGENCY;
+    },
+    ...mapState(['textColor'])
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+#extra
+  padding-top: 100px
+
+p
+  font-size: 30px
+
+.col
+  display: flex
+  align-items: center
+  flex-direction: column
+</style>

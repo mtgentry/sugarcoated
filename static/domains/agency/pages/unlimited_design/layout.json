@@ -1,0 +1,205 @@
+{
+  "backgroundColor": "#222533",
+  "textColor": "#ffffff",
+  "seo_description": "",
+  "layout": [
+    {
+      "size": "h1",
+      "title": "Say Goodbye to Expensive Photoshoots",
+      "animation": "disable",
+      "text": [""]
+    },
+    {
+      "size": "h2",
+      "title": "Transform your product photography with stunning 3D renders at a fraction of traditional costs.",
+      "animation": "disable"
+     
+    },
+    {
+      "button": {
+        "text": "SCHEDULE A FREE CALL",
+        "link": "https://calendly.com/hoopladesign/30min",
+        "target": "_blank",
+        "align": "center",
+        "smaller": 1,
+        "icon": " mdi-chevron-right"
+      },
+      "animation": "disable"
+    },
+    {
+      "carousel": {
+        "spacing": 32,
+        "images": [
+          {
+            "src": "/images/carousel_1.jpg",
+            "alt": "Green face mask product",
+            "position": "center",
+            "width": 462,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_2.jpg",
+            "alt": "Black serum bottle",
+            "position": "center",
+            "width": 755,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_3.jpg",
+            "alt": "White serum bottle with lemons",
+            "position": "center",
+            "width": 519,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_4.jpg",
+            "alt": "Product duo",
+            "position": "center",
+            "width": 786,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_5.jpg",
+            "alt": "Green face mask jar",
+            "position": "center",
+            "width": 647,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_6.jpg",
+            "alt": "Black eye cream jar",
+            "position": "center",
+            "width": 648,
+            "height": 550
+          }
+        ],
+        "animation": "disable"
+      }
+    },
+
+
+{
+      "column": {
+        "items": [
+          {
+            "textBox": {
+              "title": "Reimagining Visuals—Without the Overhead",
+              "text": "Imagine a workflow where you can produce stunning, varied imagery without the limitations of traditional shoots. Every traditional photoshoot demands resources—from models and stylists to location fees and editing—adding up to a significant expense, each time. With our 3D imagery solution, you’re free from those recurring costs, transforming your creative process into something seamless and scalable.",
+              "animation": "fade-down"
+             
+            }
+          }
+
+
+
+
+
+          
+          
+        ]
+      }
+    },
+
+
+
+  {
+      "quote": {
+        "text": "SO GOOD 👏👏👏\nMason -- this is great.\nWhat other angles can we\ndo for this product?\nWe should discuss!",
+        "animation": "disable",
+        "author": "Casey G"
+        
+      }
+    },
+
+{
+      "column": {
+        "items": [
+          
+
+
+
+
+
+          {
+            "textBox": {
+              "title": "Stay Fresh, Stay Ahead",
+              "text": "In beauty, staying visually relevant is everything. But frequent content refreshes can feel like an endless loop of expenses and coordination. Now, picture having the ability to create new images at will, staying on trend without the logistical drain."
+            }
+          },
+          {
+            "textBox": {
+              "title": "Maximize ROI with Limitless Possibilities",
+              "text": "Traditional photoshoots yield only a limited set of shots. For beauty brands craving variety, this model is a tough sell. Our 3D solution reshapes this equation, providing you with endless options, adaptable to any campaign or product launch."
+            }
+          }
+        ]
+      }
+    },
+
+    
+    {
+  
+      "size": "h1",
+      "align": "center",
+      "animation": "disable"
+    },
+    {
+      "quote": {
+        "text": "You really went above and beyond, I absolutely love the images, especially the one on the purple tile!",
+        "animation": "disable",
+        "author": "Hibo E"
+        
+      }
+    },
+
+{
+      "column": {
+        "items": [
+          {
+            "textBox": {
+              "title": "Lorem Ipsum",
+              "text": "Imagine a workflow where you can produce stunning, varied imagery without the limitations of traditional shoots. Every traditional photoshoot demands resources—from models and stylists to location fees and editing—adding up to a significant expense, each time. With our 3D imagery solution, you’re free from those recurring costs, transforming your creative process into something seamless and scalable."
+            }
+          },
+
+
+
+
+
+          {
+            "textBox": {
+              "title": "Lorem Ipsum",
+              "text": "In beauty, staying visually relevant is everything. But frequent content refreshes can feel like an endless loop of expenses and coordination. Now, picture having the ability to create new images at will, staying on trend without the logistical drain."
+            }
+          },
+          {
+            "textBox": {
+              "title": "Lorem Ipsum",
+              "text": "Traditional photoshoots yield only a limited set of shots. For beauty brands craving variety, this model is a tough sell. Our 3D solution reshapes this equation, providing you with endless options, adaptable to any campaign or product launch."
+            }
+          }
+        ]
+      }
+    },
+
+
+
+
+
+    {
+      "title": "Ready to double your conversions? Let's chat.",
+      "size": "h5"
+    },
+    {
+      "button": {
+        "text": "SCHEDULE A FREE CALL",
+        "link": "https://calendly.com/hoopladesign/30min",
+        "target": "_blank",
+        "align": "center",
+        "smaller": 1,
+        "icon": " mdi-chevron-right"
+      },
+      "animation": "disable"
+    }
+  ]
+}
