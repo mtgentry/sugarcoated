@@ -1,3 +1,4 @@
+# portfolio.yaml
 alerts:
 - rule: DEPLOYMENT_FAILED
 - rule: DOMAIN_FAILED
@@ -33,3 +34,10 @@ services:
   name: portfolio
   run_command: yarn start --hostname 0.0.0.0 --port 8080
   source_dir: /
+  health_check:
+    http_path: /
+    initial_delay_seconds: 30
+    period_seconds: 10
+    success_threshold: 1
+    failure_threshold: 3
+    timeout_seconds: 5

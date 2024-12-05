@@ -1,3 +1,4 @@
+// nuxt.config.js
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -6,6 +7,12 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
+
+  // Server configuration
+  server: {
+    host: '0.0.0.0',
+    port: 8080
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -50,13 +57,12 @@ export default {
     // ...other modules you might already have
   ],
 
-axios: {
-  baseURL: process.env.BASE_URL,
-  port: 3000,
-  proxy: false,
-  retry: { retries: 3 },
-  debug: true
-},
+  axios: {
+    baseURL: process.env.BASE_URL,
+    proxy: false,
+    retry: { retries: 3 },
+    debug: true
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
