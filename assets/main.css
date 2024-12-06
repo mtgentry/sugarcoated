@@ -26,10 +26,11 @@
 
 /* Global Styles */
 body {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Lora', serif ! important;
   color: #ffffff;
   background-color: #fff;
   font-size: 16px;
+  font-weight: 400 !important;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,8 +95,8 @@ h2 {
 }
 
 .textBoxText {
-  font-family: 'Lora', sans-serif;
-  font-weight: 400;
+  font-family: 'Lora', serif !important;
+  font-weight: 400 !important;
   font-size: 19px;
   line-height: 1.5;
   opacity: 0.9;
@@ -103,8 +104,8 @@ h2 {
 }
 
 p {
-  font-family: 'Lora', sans-serif;
-  font-weight: 400;
+  font-family: 'Lora', serif ! important;
+  font-weight: 400 !important;
   font-size: 19px;
   line-height: 1.5;
   opacity: 0.9;
@@ -146,8 +147,8 @@ p {
 }
 
 .quote-text {
-  font-family: 'Lora', sans-serif;
-  font-weight: 300;
+  font-family: 'Lora', serif  !important;
+  font-weight: 400 !important;
   font-size: 45px;
   line-height: 1.2;
   font-style: italic;
@@ -177,6 +178,7 @@ border: 1px solid #ccc;
   position: relative;
   top: 120px; 
   font-family: 'Lora';
+  font-weight: 400 !important;
   line-height: 1;
   color: #fff;
 
