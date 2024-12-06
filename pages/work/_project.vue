@@ -5,7 +5,6 @@
     v-col(cols="12")
       Section(v-for="section in project.layout" :section="section" :key="section.name")
     Footer
-
 </template>
 
 <script>
@@ -21,22 +20,45 @@ export default {
   },
   fetchOnServer: true,
   transition: 'fade',
-  async head() {
-    if (this.$store.state.projects) {
-      this.project = this.$store.state.projects[this.$route.params.project]
-    }
+  
+  async asyncData({ store, params, $axios, error }) {
+    try {
+      let project = store.state.projects ? store.state.projects[params.project] : null;
+      
+      if (!project) {
+        const response = await $axios.get(`/domains/agency/work/${params.project}/layout.json`);
+        project = response.data;
+      }
+      
+      if (!project) {
+        return error({ statusCode: 404, message: 'Project not found' });
+      }
 
-    if (!this.project) {
-      this.project = await this.$axios.get(`/work/${this.$route.params.project}/layout.json`)
-        .then((response) => response.data)
+      store.commit('updateState', {
+        field: 'backgroundColor', 
+        value: project.backgroundColor
+      });
+      store.commit('updateState', {
+        field: 'textColor', 
+        value: project.textColor
+      });
+      store.commit('updateState', {
+        field: 'project', 
+        value: project
+      });
+
+      return { project };
+    } catch (e) {
+      return error({ statusCode: 404, message: 'Project not found' });
     }
-    this.$store.commit('updateState', {field: 'backgroundColor', value: this.project.backgroundColor})
-    this.$store.commit('updateState', {field: 'textColor', value: this.project.textColor})
-    this.$store.commit('updateState', {field: 'project', value: this.project})
+  },
+
+  head() {
+    if (!this.project) return {};
+    
     return {
       title: this.project.cover.title,
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: 'description',
           name: 'description',
@@ -44,13 +66,7 @@ export default {
         }
       ]
     }
-  },
-  data() {
-    return {
-      project: null,
-    }
-  },
-
+  }
 }
 </script>
 

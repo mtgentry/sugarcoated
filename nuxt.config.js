@@ -61,7 +61,7 @@ export default {
   ],
 
   axios: {
-    baseURL: process.env.BASE_URL,
+    baseURL: 'http://localhost:8080',  // Match your Nuxt server port
     proxy: false,
     retry: { retries: 3 },
     debug: true

@@ -50,7 +50,7 @@ h1 {
 .v-application h2.font-weight-bold,
 h2.font-weight-bold,
 h2 {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300 !important;
   font-size: 23px !important;
   line-height: 140% !important;
@@ -59,13 +59,9 @@ h2 {
   text-align: center;
 }
 
-p {
-  font-family: 'Lora', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.75;
-  margin-bottom: 16px;
-}
+
+
+
 
 /* Text Box Components */
 .textBoxTitle {
@@ -77,6 +73,26 @@ p {
   color: #fff;
 }
 
+
+
+.top {
+  font-family: 'Montserrat', sans-serif;  /* or any of your other imported fonts */
+  font-weight: 500;  /* or try other weights: 100, 200, etc */
+  font-size: 40px;
+  line-height: 130%;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  max-width: 80%;
+}
+
+/* If you need to override at different screen sizes */
+@media (max-width: 768px) {
+  .top {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
 .textBoxText {
   font-family: 'Lora', sans-serif;
   font-weight: 400;
@@ -85,6 +101,17 @@ p {
   opacity: 0.9;
   color: #fff;
 }
+
+p {
+  font-family: 'Lora', sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+
+
 
 /* Button Styles */
 .button {

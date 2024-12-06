@@ -142,13 +142,7 @@ export default {
 .v-toolbar__title
   user-select: none
 
-p
-  font-family: Resist Sans
-  font-size: 20px
-  text-align: left
-  font-weight: 300
-  line-height: 140%
-  margin-bottom: 50px
+
 
 
 #app
