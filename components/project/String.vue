@@ -39,29 +39,7 @@ export default {
 
 
 
-h2
-  font-size: 35px
-  line-height: 120%
-  padding-bottom: 5px
-h3
-  font-weight: 100
-  font-size: 27px
-  line-height: 100%
-  padding-bottom: 20px
-  margin-top: 100px
-h4
-  font-weight: 500
-  font-size: 33px !important
 
-h5
-
-  font-size: 30px
-  font-style: normal
-  font-weight: 200
-  line-height: 120%
-  text-align: center
-  margin-top: 50px
-  padding-bottom: 50px
 
 
 

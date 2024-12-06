@@ -22,14 +22,6 @@ export default {
 <style lang="sass" scoped>
 
 
-.title
-  
-
-  font-weight: 700
-  font-size: 49px
-  padding-top: 12px ! important
-  line-height: 110%
- 
 
 
 

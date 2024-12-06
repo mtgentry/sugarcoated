@@ -47,9 +47,9 @@ h1 {
   margin-bottom: 14px;
 }
 
-.v-application h2,
-.v-application h2.font-weight-bold,
-h2.font-weight-bold,
+
+.v-application h2.font-weight-bold, 
+
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300 !important;
@@ -62,22 +62,54 @@ h2 {
 
 
 
+h3 {
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 100%;
+  padding-bottom: 13px;
+  margin-top: 100px;
+  color:#fff;
+    font-family: 'Montserrat', sans-serif ! important;
+  }
+
+  h5 {
+  font-weight: 200;
+  font-size: 35px;
+  line-height: 100%;
+  padding-bottom: 13px;
+  margin-top: 100px;
+  color:#fff;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif ! important;
+  }
 
 
-/* Text Box Components */
+
 .textBoxTitle {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
+  font-family: 'Montserrat', sans-serif ! important;
+  font-weight: 700 ! important;
+  font-size: 24px;
   line-height: 1.3;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   color: #fff;
 }
 
 
 
+/* Text Box Components */
+
+
+.title {
+ font-family: 'Montserrat', sans-serif ! important;
+  font-size: 49px;
+  padding-top: 12px ! important;
+  line-height: 110%;
+  color: #0000ff;
+}
+
 .top {
-  font-family: 'Montserrat', sans-serif;  /* or any of your other imported fonts */
+  font-family: 'Montserrat', sans-serif ! important;
   font-weight: 500;  /* or try other weights: 100, 200, etc */
   font-size: 40px;
   line-height: 130%;
@@ -109,6 +141,7 @@ p {
   font-size: 19px;
   line-height: 1.5;
   opacity: 0.9;
+
 }
 
 

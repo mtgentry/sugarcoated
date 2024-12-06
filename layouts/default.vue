@@ -25,7 +25,7 @@ export default {
   },
   async fetch() {
     if (!this.$store.state.layout) {
-      let layout = await this.$axios.$get('/homepage.json').then((response) => response)
+      let layout = await this.$axios.$get('/domains/agency/homepage.json').then((response) => response)
       this.$store.commit('updateState', {field: 'layout', value: layout})
     }
   },
@@ -93,11 +93,6 @@ export default {
 </script>
 
 <style lang="sass">
-
-
-
-
-
 .theme--dark.v-app-bar.v-toolbar.v-sheet
   padding: 0 34px
 
@@ -106,9 +101,6 @@ export default {
 
 .v-toolbar__title
   user-select: none
-
-
-
 
 #app
   transition: background-color 1s ease-in-out, opacity 1s ease-in-out, color 1s ease-in-out
