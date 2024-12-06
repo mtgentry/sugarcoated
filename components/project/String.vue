@@ -54,7 +54,7 @@ h4
   font-size: 33px !important
 
 h5
-  font-family: Resist Sans
+
   font-size: 30px
   font-style: normal
   font-weight: 200

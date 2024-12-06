@@ -100,7 +100,6 @@ export default {
   background-color: #1F00DC
   border-radius: 0 100% 100% 100%
   font-size: 25px
-  font-family: Resist Sans, serif
   padding-bottom: 4px
 
 .description
@@ -108,7 +107,6 @@ export default {
   padding: 15px
   width: 240px
   color: #FFF
-  font-family: Resist Sans, serif
   font-size: 15px
   position: absolute
   top: 60px

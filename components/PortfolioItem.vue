@@ -24,7 +24,7 @@ export default {
 
 .title
   
-  font-family: 'Resist Sans', sans-serif
+
   font-weight: 700
   font-size: 49px
   padding-top: 12px ! important
@@ -35,7 +35,7 @@ export default {
 
 .categories
 
-  font-family: 'Resist Sans', sans-serif
+
   font-size: 16px
   color: #948F8B
 

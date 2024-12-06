@@ -31,7 +31,7 @@ export default {
   padding-left: 26px
 
 .smaller
-  font-family: Resist Sans
+
   font-size: 15px!important
   font-weight: 300!important
   letter-spacing: 0.75px!important

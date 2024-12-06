@@ -95,43 +95,8 @@ export default {
 <style lang="sass">
 
 
-@font-face
-  font-family: 'Resist Sans'
-  src: url('/fonts/resist-sans-text-light.ttf')
-  font-weight: 100
 
-@font-face
-  font-family: 'Resist Sans'
-  src: url('/fonts/resist-sans-text-regular.ttf')
-  font-weight: 300
 
-@font-face
-  font-family: 'Resist Sans'
-  src: url('/fonts/resist-sans-text-medium.ttf')
-  font-weight: 600
-
-@font-face
-  font-family: 'Inter'
-  src: url('/fonts/Inter-Regular.ttf')
-  font-weight: 300
-
-@font-face
-  font-family: 'Inter'
-  src: url('/fonts/Inter-Medium.ttf')
-  font-weight: 600
-
-@font-face
-  font-family: 'Work Sans'
-  src: url('/fonts/WorkSans-Regular.ttf')
-  font-weight: 300
-
-@font-face
-  font-family: 'Work Sans'
-  src: url('/fonts/WorkSans-Medium.ttf')
-  font-weight: 600
-
-.v-application
-  font-family: 'Resist Sans', sans-serif
 
 .theme--dark.v-app-bar.v-toolbar.v-sheet
   padding: 0 34px
