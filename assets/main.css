@@ -1,5 +1,4 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Lora:wght@400;500;600;700&display=swap');
 
 
 /* Reset */
@@ -129,7 +128,7 @@ h3 {
 .textBoxText {
   font-family: 'Lora', serif !important;
   font-weight: 400 !important;
-  font-size: 19px;
+  font-size: 19px !important;
   line-height: 1.5;
   opacity: 0.9;
   color: #fff;
