@@ -1,0 +1,99 @@
+  {
+  "backgroundColor": "#222533",
+  "textColor": "#ffffff",
+  "seo_description": "",
+  "layout": [
+
+
+
+
+    {
+      "size": "h1",
+      "title": "Frequently Asked Questions",
+      "animation": "fade",
+
+
+      "text": []
+    },
+
+
+
+
+
+
+
+
+
+    {"animation": "fade",
+      "faq": [
+
+
+
+
+        {
+          "question": "Why wouldn't I just hire an agency?",
+          "answer": "Agencies can be expensive as you're paying for overhead, as well as the salaries of account executives and project managers. Our model provides similar quality work at a fraction of the cost."
+        },
+        {
+          "question": "Why wouldn't I just hire a full-time designer?",
+          "answer": "In today's market, the salary for a senior UI/UX or visual designer starts at $120k. You could hire a freelancer, but the best ones are often busy and highly selective about the projects they take on."
+        },
+
+        {
+          "question": "How does it work?",
+          "answer": "I will create a Trello project for us and you can submit tasks there one at a time. Your deliverable will be completed in 48 hours on average (complex tasks take longer). I’ll revise until you’re 100% satisfied. You can even create a backlog of tasks. For that, I complete tasks one at a time in the order in which you arrange them."
+        },
+
+        {
+          "question": "Is there a limit to how many requests I can have?",
+          "answer": "No, you can add as many as you like."
+        },
+
+        {
+          "question": "How fast will I receive my designs?",
+          "answer": "The turnaround time depends on the complexity of the request. On average, a task takes about 48 hours. For a task like a 20-page website, I typically complete 2-3 pages every couple of days."
+        },
+
+        {
+          "question": "Who is this for?",
+          "answer": "I mainly work with e-commerce and B2B SAAS companies that have achieved product-market fit."
+        },
+
+        {
+          "question": "What kind of work do you do?",
+          "answer": "I mainly focus on web design, including visual design, and UI/UX. We also offer 3D product renderings and some (limited) motion graphics. We don't specialize do: logos, print, packaging, illustration, advertising, or social media design. That said, sometimes these categories can blend together, and if you need some one-off banner ads to match the homepage design I just created, I can certainly do that."
+
+        },
+
+        {
+          "question": "What software do you use?",
+          "answer": "Most of the work is done in Figma."
+        },
+
+        {
+          "question": "Who does the work?",
+          "answer": "The majority of the work is done by me, Mason. I'm a former Art Director at TBWA/CHIAT/DAY (Apple's ad agency) with more than 15 years of experience."
+        },
+        {
+          "question": "Can I pause the subscription?",
+          "answer": "Yes! You can pause at any time in Stripe. Billing cycles are every 31 days. If you use the service for 15 days and then pause your subscription, you'll have 16 days to be used at any time in the future."
+        },
+        {
+          "question": "In addition to pure design, how else can you help me?",
+          "answer": "I can help with strategy also. <a href='http://hoopladesign.com/tabs_chocolate' target='_blank'><u>Here</u></a> is a good example."
+        },
+        {
+          "question": "What if I don't like the design?",
+          "answer": "You can send it back, and I can revise it or create another version."
+        }
+      ]
+    }
+
+  ]
+}
+
+
+
+
+
+

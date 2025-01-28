@@ -1,0 +1,189 @@
+{
+  "backgroundColor": "#222533",
+  "textColor": "#ffffff",
+  "seo_description": "",
+  "layout": [
+    {
+      "size": "h1",
+      "title": "Say Goodbye to Expensive Photoshoots",
+      "animation": "disable",
+      "text": [""]
+    },
+    {
+      "size": "h2",
+      "title": "Transform your product photography with stunning 3D renders at a fraction of traditional costs.",
+      "animation": "disable"
+     
+    },
+    {
+      "button": {
+        "text": "SCHEDULE A FREE CALL",
+        "link": "https://calendly.com/sugar_coated/30min",
+        "target": "_blank",
+        "align": "center",
+        "smaller": 1,
+        "icon": " mdi-chevron-right"
+      },
+      "animation": "disable"
+    },
+    {
+      "carousel": {
+        "spacing": 32,
+        "images": [
+          {
+            "src": "/images/carousel_1.jpg",
+            "alt": "Green face mask product",
+            "position": "center",
+            "width": 462,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_2.jpg",
+            "alt": "Black serum bottle",
+            "position": "center",
+            "width": 755,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_3.jpg",
+            "alt": "White serum bottle with lemons",
+            "position": "center",
+            "width": 519,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_4.jpg",
+            "alt": "Product duo",
+            "position": "center",
+            "width": 786,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_5.jpg",
+            "alt": "Green face mask jar",
+            "position": "center",
+            "width": 647,
+            "height": 550
+          },
+          {
+            "src": "/images/carousel_6.jpg",
+            "alt": "Black eye cream jar",
+            "position": "center",
+            "width": 648,
+            "height": 550
+          }
+        ],
+        "animation": "disable"
+      }
+    },
+
+
+{
+      "column": {
+        "items": [
+          {
+            "textBox": {
+              "title": "Reimagining Visuals—Without the Overhead",
+              "text": "Traditional photoshoots drain time and resources. Models, stylists, location fees, post-production—it all adds up. Every shoot becomes another logistical hurdle and budget burden. But with our 3D imagery solution, you gain limitless creative possibilities without recurring costs. It’s a scalable, seamless alternative designed to free up your resources and fuel your vision.",
+              "animation": "fade-down"
+             
+            }
+          }
+
+
+
+
+
+          
+          
+        ]
+      }
+    },
+
+
+
+  {
+      "quote": {
+        "text": "SO GOOD 👏👏👏\nMason -- this is great.\nWhat other angles can we\ndo for this product?\nWe should discuss!",
+        "animation": "disable",
+        "author": "Casey Georgeson"
+        
+      }
+    },
+
+{
+      "column": {
+        "items": [
+          
+
+
+
+
+
+          {
+            "textBox": {
+              "title": "Stay Fresh, Stay Ahead",
+              "text": "In beauty, relevance reigns supreme. But staying ahead visually can feel like an endless cycle of mounting costs and coordination. What if you could refresh your content on-demand—no bookings, no stress? With 3D capabilities, you keep your brand’s visuals as dynamic as the trends driving them."
+            }
+          },
+          {
+            "textBox": {
+              "title": "Maximize ROI with Limitless Possibilities",
+              "text": "Traditional photoshoots yield finite results. Limited shots, fixed options. For beauty brands that thrive on variety, it’s a bottleneck. Our 3D solution shatters those boundaries, offering infinite creative iterations adaptable to every campaign and launch. The result? Endless potential, measurable returns."
+            }
+          }
+        ]
+      }
+    },
+
+    
+    {
+  
+      "size": "h1",
+      "align": "center",
+      "animation": "disable"
+    },
+    {
+      "quote": {
+        "text": "You really went above and beyond, I absolutely love the images, especially the one on the purple tile!",
+        "animation": "disable",
+        "author": "Hibo Elmi"
+        
+      }
+    },
+
+{
+      "column": {
+        "items": [
+          {
+            "textBox": {
+              "title": "Reclaim Your Time ",
+              "text": "Time is your most valuable asset—don’t let it be swallowed by the chaos of photoshoots. From managing schedules to last-minute changes, the process demands more than it gives. Enter 3D: where the complexities fade and your team gains hours back. No talent to book, no locations to lock down. Just streamlined imagery creation, precisely when and how you need it."
+            }
+          }
+
+        ]
+      }
+    },
+
+
+
+
+
+    {
+      "title": "Unlock Premium Visuals for Less",
+      "size": "h5"
+    },
+    {
+      "button": {
+        "text": "SCHEDULE A FREE CALL",
+        "link": "https://calendly.com/sugar_coated/30min",
+        "target": "_blank",
+        "align": "center",
+        "smaller": 1,
+        "icon": " mdi-chevron-right"
+      },
+      "animation": "disable"
+    }
+  ]
+}

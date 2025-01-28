@@ -1,20 +1,20 @@
 <template lang="pug">
-  .carousel-wrapper.relative.w-screen.overflow-hidden(:style="wrapperStyle")
-    .carousel.flex(:style="carouselStyle")
-      .carousel-content.flex(:style="carouselContentStyle" ref="content")
-        .image-wrapper.rounded-lg.overflow-hidden(
-          v-for="(image, index) in displayedImages"
-          :key="`${image.src}-${index}`"
-          :style="getContainerStyle(image)"
+.carousel-wrapper.relative.w-screen.overflow-hidden(:style="wrapperStyle")
+  .carousel.flex(:style="carouselStyle")
+    .carousel-content.flex(:style="carouselContentStyle" ref="content")
+      .image-wrapper.rounded-lg.overflow-hidden(
+        v-for="(image, index) in displayedImages"
+        :key="`${image.src}-${index}`"
+        :style="getContainerStyle(image)"
+      )
+        img.carousel-image.object-cover(
+          :src="image.src",
+          :alt="image.alt",
+          loading="lazy",
+          class="transition-transform duration-300",
+          @load="handleImageLoad(image.src)",
+          @error="handleImageError(image.src)"
         )
-          img.carousel-image.object-cover(
-            :src="image.src",
-            :alt="image.alt",
-            loading="lazy",
-            class="transition-transform duration-300",
-            @load="handleImageLoad(image.src)",
-            @error="handleImageError(image.src)"
-          )
 </template>
 
 <script>
@@ -26,7 +26,45 @@ export default {
       required: true,
       default: () => ({
         carousel: {
-          images: [],
+          // Provide your images array with width and height explicitly defined:
+          images: [
+            {
+              src: 'carousel_1.jpg',
+              alt: 'Carousel Image 1',
+              width: 924,
+              height: 1100
+            },
+            {
+              src: 'carousel_2.jpg',
+              alt: 'Carousel Image 2',
+              width: 1510,
+              height: 1100
+            },
+            {
+              src: 'carousel_3.jpg',
+              alt: 'Carousel Image 3',
+              width: 1038,
+              height: 1100
+            },
+            {
+              src: 'carousel_4.jpg',
+              alt: 'Carousel Image 4',
+              width: 1572,
+              height: 1100
+            },
+            {
+              src: 'carousel_5.jpg',
+              alt: 'Carousel Image 5',
+              width: 1294,
+              height: 1100
+            },
+            {
+              src: 'carousel_6.jpg',
+              alt: 'Carousel Image 6',
+              width: 1296,
+              height: 1100
+            }
+          ],
           backgroundColor: '#222533',
           spacing: 16
         }
@@ -34,7 +72,7 @@ export default {
     },
     speed: {
       type: Number, // Speed in pixels per second
-      default: 100 // Adjust as needed for desired scrolling speed
+      default: 100  // Adjust as needed for desired scrolling speed
     }
   },
   data() {
@@ -56,26 +94,24 @@ export default {
       }
     },
     carouselStyle() {
-      return {
-        // No animation applied here; animation is handled in carousel-content
-      }
+      // No specific animation here; it's handled in startScrolling()
+      return {}
     },
     carouselContentStyle() {
+      // Two sets of images side by side
       return {
         display: 'flex',
-        width: '200%', // Two sets of images
-        // Removed the animation property to prevent conflicts
+        width: '200%'
       }
     }
   },
   mounted() {
     this.initializeCarousel()
     window.addEventListener('resize', this.handleResize)
-    // Start scrolling only after all unique images are loaded
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.handleResize)
-    cancelAnimationFrame(this.animationFrameId) // Clean up animation frame
+    cancelAnimationFrame(this.animationFrameId)
   },
   methods: {
     initializeCarousel() {
@@ -85,35 +121,34 @@ export default {
         return
       }
 
-      // Duplicate images once for seamless scrolling (total two sets)
-      // Append a unique query parameter to duplicated images to ensure @load fires
+      // Duplicate images for a seamless loop; add '?dup=1' to ensure @load triggers
       const duplicateImages = baseImages.map(img => ({
         ...img,
-        src: img.src + '?dup=1' // Modify as needed to ensure uniqueness
+        src: img.src + '?dup=1'
       }))
+
       this.displayedImages = [...baseImages, ...duplicateImages]
       console.log('Displayed Images:', this.displayedImages)
 
-      // Reset imagesLoaded counter
+      // Reset counters
       this.imagesLoaded = 0
-
-      // Set unique images count
       this.uniqueImagesCount = baseImages.length
 
+      // Once the DOM is ready:
       this.$nextTick(() => {
         if (this.$refs.content) {
-          // Calculate the width of a single set of images
+          // Calculate the width of a single set
           this.singleSetWidth = this.calculateSetWidth(baseImages)
           console.log('Single Set Width:', this.singleSetWidth)
-
-          // Start scrolling after calculating dimensions
+          // Begin the scrolling animation
           this.startScrolling()
         }
       })
     },
     calculateSetWidth(images) {
+      // Sum up each image’s width plus spacing
       const totalWidth = images.reduce((acc, img) => {
-        const width = img.width ? img.width : 0 // Use 0 if width is not specified
+        const width = img.width ? img.width : 0
         return acc + width + this.section.carousel.spacing
       }, 0)
       console.log('Calculated Set Width:', totalWidth)
@@ -124,11 +159,10 @@ export default {
         width: `${image.width}px`,
         height: `${image.height}px`,
         marginRight: `${this.section.carousel.spacing}px`,
-        flexShrink: 0 // Prevent flex items from shrinking
+        flexShrink: 0
       }
     },
     handleResize() {
-      // Debounce resize handling to improve performance
       clearTimeout(this.resizeTimeout)
       this.resizeTimeout = setTimeout(() => {
         console.log('Window resized. Reinitializing carousel...')
@@ -140,38 +174,42 @@ export default {
         if (!this.lastFrameTime) {
           this.lastFrameTime = timestamp
         }
-        const deltaTime = (timestamp - this.lastFrameTime) / 1000 // Convert to seconds
+        // Determine elapsed time since last frame
+        const deltaTime = (timestamp - this.lastFrameTime) / 1000
         this.lastFrameTime = timestamp
 
-        // Update current position based on speed and elapsed time
+        // Move left (subtract X)
         this.currentPosition -= this.speed * deltaTime
 
-        // Reset position to 0 when scrolled past one set
+        // If we've scrolled a full set's width, reset
         if (Math.abs(this.currentPosition) >= this.singleSetWidth) {
           console.log('Scrolled past one set. Resetting position.')
           this.currentPosition += this.singleSetWidth
         }
 
-        // Apply the transform using translateX for better compatibility
+        // Apply the transform
         this.$refs.content.style.transform = `translateX(${this.currentPosition}px)`
 
-        // Request the next frame
+        // Request next frame
         this.animationFrameId = requestAnimationFrame(scroll)
       }
-      // Start the animation
+
+      // Kick off the scroll loop
       this.animationFrameId = requestAnimationFrame(scroll)
       console.log('Started scrolling animation.')
     },
     handleImageLoad(src) {
       console.log(`Image loaded: ${src}`)
-      // Only count unique images
+      // Only count unique images from the original set
       if (this.section.carousel.images.some(img => img.src === src)) {
         this.imagesLoaded += 1
         console.log(`Images loaded: ${this.imagesLoaded}/${this.uniqueImagesCount}`)
+
+        // Optional: if you want to start the animation only after all unique images are loaded
+        // you could call `startScrolling()` here instead of in `initializeCarousel`.
         if (this.imagesLoaded >= this.uniqueImagesCount) {
-          console.log('All unique images loaded. Starting scrolling animation.')
-          // Scroll was already started in initializeCarousel after nextTick
-          // If you prefer to start here, you can adjust the logic accordingly
+          console.log('All unique images loaded.')
+          // startScrolling() could be called here if preferred.
         }
       }
     },
@@ -195,19 +233,18 @@ export default {
 .carousel
   display: flex
   width: 100%
-  /* No animation here */
 
 .carousel-content
   display: flex
   flex-wrap: nowrap
-  will-change: transform // Hint the browser for optimization
+  will-change: transform // Hint the browser for smoother animation
 
 .image-wrapper
-  border-radius: 0.5rem // Matches `rounded-lg`
+  border-radius: 0.5rem
   overflow: hidden
   display: inline-block
-  flex-shrink: 0 // Prevent shrinking
-  position: relative // Establish a new positioning context
+  flex-shrink: 0
+  position: relative
 
 .carousel-image
   display: block
@@ -215,29 +252,20 @@ export default {
   height: 100%
   object-fit: cover
   transition: transform 0.3s ease
-  backface-visibility: hidden // Improve rendering in Safari
+  backface-visibility: hidden
 
   &:hover
-    transform: scale(1.05) translateZ(0) // Force hardware acceleration
+    transform: scale(1.05) translateZ(0)
 
 @media (max-width: 768px)
   .carousel-content
     flex-wrap: nowrap
 
-  .image-wrapper
-    border-radius: 0.5rem
-
 @media (min-width: 769px) and (max-width: 1200px)
   .carousel-content
     flex-wrap: nowrap
 
-  .image-wrapper
-    border-radius: 0.5rem
-
 @media (min-width: 1201px)
   .carousel-content
     flex-wrap: nowrap
-
-  .image-wrapper
-    border-radius: 0.5rem
 </style>
