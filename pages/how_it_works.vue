@@ -3,23 +3,22 @@
     v-col(cols="12" class="content-column")
       .copy-container
         .intro_big How it Works
-        .intro_text We take your brand's unique identity and translate it into stunning, photorealistic 3D models of your containers. Through our streamlined five-step process, we'll collaborate with you to create custom environments that perfectly showcase your products. Whether you're launching a new brand or refreshing your existing imagery, we'll help you create consistent, high-quality visuals that bring your vision to life.
+        .intro_text Your brand deserves visuals that not only capture attention but also reflect its unique identity. That’s why we’ve designed a clear, collaborative process to transform your ideas into photorealistic 3D models that elevate your product presentation. In five streamlined steps, we’ll work together to craft visuals that resonate with your audience and align seamlessly with your vision.
         
         hr
-        h5 Step 1: Tell Us About Your Brand
-        p Your brand identity is the foundation of every visualization we create. Let's start by understanding your visual style, core values, and aesthetic preferences so we can craft images that truly resonate with your brand's personality.
+        h5 Step 1: Understanding Your Brand
+        p Everything we create begins with a deep understanding of your brand. We’ll ask questions to uncover the essence of your identity—your colors, values, and aesthetic preferences—to ensure the final visuals feel unmistakably yours.
 
 
 
         ul.brand-list
-          li.brand-item What are your brand colors?
-          li.brand-item What are your brand's main values?
-          li.brand-item What are some common aesthetics you like to integrate? (i.e., muted colors, textures, etc.)
-          li.brand-item Can you share some brands that have photos you love and aspire to?
+          li.brand-item What defines your brand’s visual identity?
+          li.brand-item Are there brands whose imagery inspires you?
+          li.brand-item What colors, textures, or styles best represent your product?
 
-        hr
-        h5 Step 2: Send Us Your Assets
-        p Now that we understand your brand's vision, we need the technical elements to bring it to life. Providing us with your logos, labels, and container specifications helps ensure every detail of your 3D visualization is precisely aligned with your brand standards.
+       
+        h5 Step 2: Sharing Your Assets
+        p With your brand’s vision in mind, we’ll gather the technical details to bring it to life. Logos, packaging files, label designs, container colors, and dimensions—these are the building blocks of precision and consistency in every model.
 
         h4 Logos
         p If your container has a logo, symbol, or mark, please send them. .svg files are best, but .eps and .ai work too.
@@ -42,9 +41,8 @@
         h4 Bottles
         p If you use a standard bottle bought from a manufacturer, just tell us its name or where you got it.
 
-        hr
-        h5 Step 3: Creating the Bottle
-        p This is where your product begins to take shape in the digital world. Through careful 3D modeling, we'll create an exact digital replica of your container, capturing every curve, texture, and unique detail that makes your packaging distinctly yours.
+        h5 Step 3: Building Your 3D Model
+        p We’ll use your assets and specifications to create a detailed, photorealistic 3D model of your container. Every element is carefully rendered to ensure accuracy and consistency with your design.
 
         p Below is a slider to compare two images. Drag the handle left or right.
         .image-comparison
@@ -55,11 +53,17 @@
               img(src="/images/after.jpg" alt="After" class="comparison-image")
             .handle
               .circle
-          .image-caption Stage 1 vs Stage 2 Model
+          .image-caption Drag to reveal 
 
-        hr
-        h5 Step 4: Adding Environments
+      
+        h5 Step 4: Placing Your Model in an Environment
         p Next we'll place your 3D bottle in a pre-designed environment. Your feedback helps us select and adjust scenes that work best for your product.
+
+
+        h5 Step 5: Customization
+
+        p We adjust the scenes based on your answers from Step 1. The environments will be similar but still feel unique to your brand. We call this process "semi-bespoke."
+
 
      
         .images-container.full-width
@@ -67,12 +71,11 @@
             img(src="/images/final.jpg" alt="Jar measurement 1" class="double")
             .image-caption The final bottle
 
-        
-        h5 Step 4: Customization
-
-        p We adjust the scenes based on your answers from Step 1. The environments will be similar but still feel unique to your brand. We call this process "semi-bespoke."
-
       
+        hr 
+        p Our five-step process is designed to be seamless and collaborative, ensuring every detail aligns with your brand’s vision. No more expensive photoshoots, coordinating schedules, or scrambling to stay ahead of trends. With 3D imagery, you have a scalable solution that saves you time, slashes costs, and delivers premium visuals without the stress. 
+
+        p Focus on your vision—we’ll take care of the rest.
     
 
       
@@ -167,6 +170,7 @@ export default {
   h5
 
     color: #F5F0E5 
+    line-height: 120%
 
 
 
