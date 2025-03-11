@@ -216,6 +216,7 @@ export default {
     font-style: italic
     letter-spacing: .5px
     color: #F5F0E5
+    margin-bottom: 10px
 
   .images-container
     &.side-by-side
